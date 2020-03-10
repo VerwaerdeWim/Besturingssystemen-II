@@ -15,9 +15,9 @@ int main(int argc, char **argv) {
             perror(argv[0]);
             exit(1);
         }
-        else if (pid[i] == 0) {
+        if (pid[i] == 0) {
             char *array[3] = {"writestring", "hello", 0};
-            if (execv("/root/c/deel06/writestring.out", array) < 0) {
+            if (execv("/root/c/deel06/writestring.out", array) == -1) {
                 perror(argv[0]);
                 exit(1);
             }
